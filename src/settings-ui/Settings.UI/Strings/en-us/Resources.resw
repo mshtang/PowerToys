@@ -827,6 +827,18 @@
   <data name="PowerLauncher_GenerateThumbnailsFromFiles.Description" xml:space="preserve">
     <value>Results will try to generate thumbnails for files. Disabling this setting may increase stability and speed</value>
   </data>
+  <data name="PowerLauncher_UseCustomFileExplorer.Header" xml:space="preserve">
+    <value>Use custom file explorer</value>
+  </data>
+  <data name="PowerLauncher_UseCustomFileExplorer.Description" xml:space="preserve">
+    <value>Use a file explorer of your choice to open files and folders in search result</value>
+  </data>
+  <data name="PowerLauncher_CustomFileExplorerPath.Header" xml:space="preserve">
+    <value>Path to custom file explorer</value>
+  </data>
+  <data name="PowerLauncher_CustomFileExplorerArgs.Header" xml:space="preserve">
+    <value>Arguments to custom file explorer</value>
+  </data>
   <data name="PowerLauncher_SearchQueryResultsWithDelay.Header" xml:space="preserve">
     <value>Input Smoothing</value>
     <comment>This is about adding a delay to wait for more input before executing a search</comment>

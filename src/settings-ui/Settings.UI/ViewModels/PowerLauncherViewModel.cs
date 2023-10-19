@@ -600,6 +600,57 @@ namespace Microsoft.PowerToys.Settings.UI.ViewModels
             }
         }
 
+        public bool UseCustomFileExplorer
+        {
+            get
+            {
+                return settings.Properties.UseCustomFileExplorer;
+            }
+
+            set
+            {
+                if (settings.Properties.UseCustomFileExplorer != value)
+                {
+                    settings.Properties.UseCustomFileExplorer = value;
+                    UpdateSettings();
+                }
+            }
+        }
+
+        public string CustomFileExplorerPath
+        {
+            get
+            {
+                return settings.Properties.CustomFileExplorerPath;
+            }
+
+            set
+            {
+                if (settings.Properties.CustomFileExplorerPath != value)
+                {
+                    settings.Properties.CustomFileExplorerPath = value;
+                    UpdateSettings();
+                }
+            }
+        }
+
+        public string CustomFileExplorerArgs
+        {
+            get
+            {
+                return settings.Properties.CustomFileExplorerArgs;
+            }
+
+            set
+            {
+                if (settings.Properties.CustomFileExplorerArgs != value)
+                {
+                    settings.Properties.CustomFileExplorerArgs = value;
+                    UpdateSettings();
+                }
+            }
+        }
+
         private ObservableCollection<PowerLauncherPluginViewModel> _plugins;
 
         public ObservableCollection<PowerLauncherPluginViewModel> Plugins

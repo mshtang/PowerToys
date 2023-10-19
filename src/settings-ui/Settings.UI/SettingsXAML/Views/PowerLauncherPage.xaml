@@ -161,6 +161,33 @@
                         <ToggleSwitch x:Uid="ToggleSwitch" IsOn="{x:Bind ViewModel.GenerateThumbnailsFromFiles, Mode=TwoWay}" />
                     </controls:SettingsCard>
 
+                    <controls:SettingsExpander
+                        x:Uid="PowerLauncher_UseCustomFileExplorer"
+                        HeaderIcon="{ui:FontIcon Glyph=&#xE8CB;}"
+                        IsExpanded="True">
+                        <ToggleSwitch x:Uid="ToggleSwitch" IsOn="{x:Bind ViewModel.UseCustomFileExplorer, Mode=TwoWay}" />
+                        <controls:SettingsExpander.Items>
+                            <controls:SettingsCard x:Uid="PowerLauncher_CustomFileExplorerPath" IsEnabled="{x:Bind Mode=OneWay, Path=ViewModel.UseCustomFileExplorer}">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBox
+                                        MinWidth="{StaticResource SettingActionControlMinWidth}"
+                                        HorizontalAlignment="Stretch"
+                                        VerticalAlignment="Center"
+                                        Margin="0 0 12 0"
+                                        Text="{x:Bind Mode=OneWay, Path=ViewModel.CustomFileExplorerPath}" />
+                                    <Button
+                                        Style="{StaticResource AccentButtonStyle}"
+                                        Click="OpenBrowseFile_Click"
+                                        Content="Select" />
+                                </StackPanel>
+                            </controls:SettingsCard>
+                            <controls:SettingsCard x:Uid="PowerLauncher_CustomFileExplorerArgs" IsEnabled="{x:Bind Mode=OneWay, Path=ViewModel.UseCustomFileExplorer}">
+                                <TextBox
+                                    MinWidth="{StaticResource SettingActionControlMinWidth}"
+                                    Text="{x:Bind Mode=TwoWay, Path=ViewModel.CustomFileExplorerArgs, UpdateSourceTrigger=LostFocus}"/>
+                            </controls:SettingsCard>
+                        </controls:SettingsExpander.Items>
+                    </controls:SettingsExpander>
                 </custom:SettingsGroup>
 
                 <!--<ComboBox x:Uid="PowerLauncher_SearchResultPreference"
@@ -298,7 +325,10 @@
                                                     Visibility="{x:Bind ShowBadgeOnPluginSettingError}" />
                                             </Grid>
 
-                                            <ToggleSwitch x:Uid="PowerLauncher_EnablePluginToggle" IsOn="{x:Bind Path=Disabled, Converter={StaticResource BoolNegationConverter}, Mode=TwoWay}" IsEnabled="{x:Bind Path=EnabledGpoRuleIsConfigured, Converter={StaticResource BoolNegationConverter}, Mode=OneWay}" />
+                                            <ToggleSwitch
+                                                x:Uid="PowerLauncher_EnablePluginToggle"
+                                                IsEnabled="{x:Bind Path=EnabledGpoRuleIsConfigured, Converter={StaticResource BoolNegationConverter}, Mode=OneWay}"
+                                                IsOn="{x:Bind Path=Disabled, Converter={StaticResource BoolNegationConverter}, Mode=TwoWay}" />
 
                                         </StackPanel>
                                         <controls:SettingsExpander.Items>

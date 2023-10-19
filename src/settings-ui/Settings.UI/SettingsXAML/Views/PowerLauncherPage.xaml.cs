@@ -85,6 +85,17 @@ namespace Microsoft.PowerToys.Settings.UI.Views
             Helpers.StartProcessHelper.Start(Helpers.StartProcessHelper.ColorsSettings);
         }
 
+        private void OpenBrowseFile_Click(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
+        {
+            var dlg = new Win32.OpenFileDialog();
+            var result = dlg.ShowDialog();
+
+            if (result == true)
+            {
+                ViewModel.CustomFileExplorerPath = dlg.FileName;
+            }
+        }
+
         public void RefreshEnabledState()
         {
             ViewModel.RefreshEnabledState();

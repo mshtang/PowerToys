@@ -177,6 +177,21 @@ namespace PowerLauncher
                         _settings.ShouldUsePinyin = overloadSettings.Properties.UsePinyin;
                     }
 
+                    if (_settings.ShouldUseCustomFileExplorer != overloadSettings.Properties.UseCustomFileExplorer)
+                    {
+                        _settings.ShouldUseCustomFileExplorer = overloadSettings.Properties.UseCustomFileExplorer;
+                    }
+
+                    if (_settings.CustomFileExplorerPath != overloadSettings.Properties.CustomFileExplorerPath)
+                    {
+                        _settings.CustomFileExplorerPath = overloadSettings.Properties.CustomFileExplorerPath;
+                    }
+
+                    if (_settings.CustomFileExplorerArgs != overloadSettings.Properties.CustomFileExplorerArgs)
+                    {
+                        _settings.CustomFileExplorerArgs = overloadSettings.Properties.CustomFileExplorerArgs;
+                    }
+
                     retry = false;
                 }
 

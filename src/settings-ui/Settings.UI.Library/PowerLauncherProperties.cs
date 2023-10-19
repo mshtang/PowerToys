@@ -75,6 +75,15 @@ namespace Microsoft.PowerToys.Settings.UI.Library
         [JsonPropertyName("use_pinyin")]
         public bool UsePinyin { get; set; }
 
+        [JsonPropertyName("use_custom_file_explorer")]
+        public bool UseCustomFileExplorer { get; set; }
+
+        [JsonPropertyName("custom_file_explorer_path")]
+        public string CustomFileExplorerPath { get; set; }
+
+        [JsonPropertyName("custom_file_explorer_args")]
+        public string CustomFileExplorerArgs { get; set; }
+
         [JsonPropertyName("generate_thumbnails_from_files")]
         public bool GenerateThumbnailsFromFiles { get; set; }
 
@@ -107,6 +116,9 @@ namespace Microsoft.PowerToys.Settings.UI.Library
             SearchWaitForSlowResults = false;
             GenerateThumbnailsFromFiles = true;
             UsePinyin = false;
+            UseCustomFileExplorer = false;
+            CustomFileExplorerPath = string.Empty;
+            CustomFileExplorerArgs = string.Empty;
         }
     }
 }

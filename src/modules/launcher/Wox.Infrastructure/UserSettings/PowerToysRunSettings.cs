@@ -211,6 +211,64 @@ namespace Wox.Infrastructure.UserSettings
         /// </summary>
         public bool ShouldUsePinyin { get; set; }
 
+        private bool _shouldUseCustomFileExplorer;
+
+        public bool ShouldUseCustomFileExplorer
+        {
+            get
+            {
+                return _shouldUseCustomFileExplorer;
+            }
+
+            set
+            {
+                if (_shouldUseCustomFileExplorer != value)
+                {
+                    _shouldUseCustomFileExplorer = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        private string _customFileExplorerPath;
+
+        public string CustomFileExplorerPath
+        {
+            get
+            {
+                return _customFileExplorerPath;
+            }
+
+            set
+            {
+                if (_customFileExplorerPath != value)
+                {
+                    _customFileExplorerPath = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        private string _customFileExplorerArgs;
+
+        public string CustomFileExplorerArgs
+        {
+            get
+            {
+                return _customFileExplorerArgs;
+            }
+
+            set
+            {
+                if (_customFileExplorerArgs != value)
+                {
+                    _customFileExplorerArgs = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+
         internal StringMatcher.SearchPrecisionScore QuerySearchPrecision { get; private set; } = StringMatcher.SearchPrecisionScore.Regular;
 
         [JsonIgnore]
